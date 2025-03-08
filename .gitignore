@@ -1,0 +1,82 @@
+# Ignore build outputs
+bin/
+obj/
+*.bin/
+*.obj/
+
+
+# Ignore user-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore Visual Studio Code files
+.vscode/
+*.vs/
+.vs/
+
+
+# Ignore Rider files
+.idea/
+
+# Ignore NuGet packages
+*.nupkg
+*.snupkg
+
+# Ignore logs
+*.log
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore database files
+*.mdf
+*.ldf
+
+# Ignore compiled DLLs
+*.dll
+
+# Ignore compiled PDBs
+*.pdb
+
+# Ignore coverage reports
+coverage/
+
+# Ignore publish outputs
+publish/
+
+# Ignore secrets
+secrets.json
+
+# Ignore configuration files
+appsettings*.json
+
+# Ignore test results
+TestResults/
+
+# Ignore ReSharper files
+_ReSharper.Caches/
+
+# Ignore JetBrains Rider files
+.idea/
+
+# Ignore Rider workspace
+*.sln.iml
+
+# Ignore local history
+.localhistory/
+
+# Ignore npm packages
+node_modules/
+
+# Ignore yarn packages
+.yarn/
+
+# Ignore environment variables
+.env
+
+# Ignore generated files
+*.generated.cs

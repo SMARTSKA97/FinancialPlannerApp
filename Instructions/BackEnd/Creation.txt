@@ -1,0 +1,59 @@
+1. Create a New Solution:
+In your project root, run:
+
+dotnet new sln -n FinancialPlannerApp
+
+Explanation: This creates a solution file (FinancialPlannerApp.sln) that will group your projects together.
+
+2. Create the Projects for Each Layer:
+
+a. Presentation Layer (API or MVC):
+For a web API, you might use:
+
+dotnet new webapi -n FinancialPlanner.ApiExplanation: This creates an ASP.NET Core Web API project that will serve as your front-facing presentation layer.
+
+b. Business Logic Layer:
+Create a class library:
+
+dotnet new classlib -n FinancialPlanner.BusinessExplanation: This project will hold your application’s core logic, services, and business rules.
+
+c. Data Access Layer:
+Create another class library:
+
+dotnet new classlib -n FinancialPlanner.Data
+
+Explanation: This project will handle your database interactions (later integrated with PostgreSQL using EF Core).
+
+3. Add Projects to the Solution:
+
+dotnet sln add FinancialPlanner.Api/FinancialPlanner.Api.csproj
+dotnet sln add FinancialPlanner.Business/FinancialPlanner.Business.csproj
+dotnet sln add FinancialPlanner.Data/FinancialPlanner.Data.csproj
+
+Explanation: Adding the projects to the solution allows Visual Studio or your chosen IDE to manage and build them together.
+
+4. Set Up Project References
+To maintain the layered architecture, you need to reference projects where necessary.
+
+Reference Data from Business:
+In the Business project, reference the Data project:
+
+dotnet add FinancialPlanner.Business/FinancialPlanner.Business.csproj reference FinancialPlanner.Data/FinancialPlanner.Data.csproj
+
+Explanation: This allows your business logic to call data access methods and entities.
+
+Reference Business from API:
+In the API project, add a reference to the Business project:
+
+dotnet add FinancialPlanner.Api/FinancialPlanner.Api.csproj reference FinancialPlanner.Business/FinancialPlanner.Business.csprojExplanation: This lets your API layer access the business logic, keeping your controllers clean.
+
+4. Initial Project Structure and Commit
+Basic Directory Structure:
+Once your projects are created, consider organizing your code within each project. For example:
+
+In FinancialPlanner.Business:
+Create folders like Services, Models, and Interfaces.
+In FinancialPlanner.Data:
+Create folders like Entities, Contexts (for EF Core), and Repositories.
+In FinancialPlanner.Api:
+You can organize controllers into a Controllers folder and configuration files as needed.
