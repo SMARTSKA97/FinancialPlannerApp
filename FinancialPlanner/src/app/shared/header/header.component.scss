@@ -1,0 +1,15 @@
+.header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 1rem;
+    nav {
+      display: flex;
+      align-items: center;
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+  }
